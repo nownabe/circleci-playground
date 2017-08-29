@@ -3,7 +3,7 @@ jobs:
   build:
     parallelism: 3
     docker:
-      - image: alpine
+      - image: ubuntu
 
     steps:
       - run:
