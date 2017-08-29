@@ -45,11 +45,11 @@ jobs:
       - deploy:
           name: "Deploy"
           command: |
-          if :; then
-            echo "Deploy start"
-            bash -x ./deploy.sh 1
-            echo "Deploy finish"
-          fi
+            if :; then
+              echo "Deploy start"
+              bash -x ./deploy.sh 1
+              echo "Deploy finish"
+            fi
       - run:
           name: "Postprocess"
           command: echo "Postprocess"
