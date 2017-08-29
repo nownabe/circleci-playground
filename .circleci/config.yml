@@ -42,9 +42,13 @@ jobs:
             echo "Step 6"
             sleep 5
             echo "Step 6 Finish"
-      - deploy: |
+      - deploy:
+          name: "Deploy"
+          command: |
           if :; then
+            echo "Deploy start"
             bash -x ./deploy.sh 1
+            echo "Deploy finish"
           fi
       - run:
           name: "Postprocess"
