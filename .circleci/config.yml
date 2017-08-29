@@ -19,10 +19,9 @@ jobs:
             if :; then
               echo "Deploy start"
               bash -x ./deploy.sh 1
+              ret=$?
               echo "Deploy finish"
+
+              bash -x ./postprocess.sh
+              exit $ret
             fi
-      - run:
-          name: "Postprocess"
-          command: echo "Postprocess"
-
-
