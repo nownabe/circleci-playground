@@ -46,6 +46,7 @@ jobs:
       - deploy:
           name: "Deploy"
           command: |
+            set +e
             if :; then
               echo "Deploy start"
               bash -x ./deploy.sh 1
