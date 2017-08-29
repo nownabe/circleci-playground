@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    parallelism: 3
+    docker:
+      - image: alpine
+
+    steps:
+      - run:
+          name: "Step 1"
+          command: echo "Step 1"
+      - run:
+          name: "Step 2"
+          command: echo "Step 2"
+      - deploy:
+          bash -x ./deploy.sh 1
+      - run:
+          name: "Postprocess"
+          command: echo "Postprocess"
+
+
